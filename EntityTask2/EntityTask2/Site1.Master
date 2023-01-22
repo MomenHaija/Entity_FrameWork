@@ -1,0 +1,349 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Task1_22_1.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <script src="Scripts/sweetalert.min.js"></script>
+    <link href="Styles/sweetalert.css" rel="stylesheet" />
+ <link rel="stylesheet" href="AdminCss/vendors/ti-icons/css/themify-icons.css"/>
+  <link rel="stylesheet" href="AdminCss/vendors/base/vendor.bundle.base.css"/>
+  <!-- endinject -->
+  <!-- inject:css -->
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+
+  <link rel="stylesheet" href="AdminCss/css/style.css"/>
+  <!-- endinject -->
+  <link rel="shortcut icon" href="AdminCss/images/favicon.png" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <style>
+   
+    .container{
+       padding-top:0px !important;
+    }
+
+       @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+    .wrapper .sidebar .profile{
+    margin-bottom: 30px;
+    text-align: center;
+
+}
+.headertitle{
+  
+   
+}
+#GridView1{
+    
+}
+.section{
+    display:none;
+}
+    @media screen and (min-width:1100px) {
+         .con{
+        width:83%;
+        margin-left:16%;
+    }
+    }
+@media screen and (min-width:0px) and (max-width:1100px) {
+    .section{
+        display: block;
+        
+    }
+
+ .headertitle{
+  width: 100%;
+  height: 50px;
+  margin-left: 0%;
+  display: flex;
+  padding-top:0.5%;
+  background-color: #2ac89b;
+  justify-content: center;
+  font-size:x-large;
+}
+}
+.wrapper .sidebar .profile img{
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.wrapper .sidebar .profile h3{
+    color: #ffffff;
+    margin: 10px 0 5px;
+}
+
+.wrapper .sidebar .profile p{
+    color: rgb(206, 240, 253);
+    font-size: 14px;
+}
+body.active .wrapper .sidebar{
+    left: -225px;
+}
+
+body.active .wrapper .section{
+    margin-left: 0;
+    width: 100%;
+}
+
+*{
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body{
+    background: #f5f6fa;
+}
+
+.wrapper .sidebar{
+    background:#49796b;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 225px;
+    height: 100%;
+    padding: 20px 0;
+    transition: all 0.5s ease;
+}
+.wrapper .sidebar .profile{
+    margin-bottom: 30px;
+    text-align: center;
+}
+.wrapper .sidebar ul li a{
+    display: block;
+    padding: 13px 30px;
+    border-bottom: 1px solid #49796b;
+    color: rgb(241, 237, 237);
+    font-size: 16px;
+    position: relative;
+}
+.wrapper .sidebar ul li a:hover,
+.wrapper .sidebar ul li a.active{
+    color:#49796b;
+
+    background:white;
+    border-right: 2px solid #49796b;
+}
+.wrapper .section{
+    width: calc(100% - 225px);
+    margin-left: 225px;
+    transition: all 0.5s ease;
+}
+
+.wrapper .section .top_navbar{
+    background: #49796b;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+
+}
+
+.wrapper .section .top_navbar .hamburger a{
+    font-size: 28px;
+    color: #f4fbff;
+}
+
+.wrapper .section .top_navbar .hamburger a:hover{
+    color: #2ac89b;
+}
+
+.wrapper .sidebar ul li a:hover .icon,
+.wrapper .sidebar ul li a.active .icon{
+    color: #49796b;
+}
+
+.wrapper .sidebar ul li a:hover:before,
+.wrapper .sidebar ul li a.active:before{
+    display: block;
+}
+
+.wrapper .sidebar ul li a .icon{
+    color: #dee4ec;
+    width: 30px;
+    display: inline-block;
+}
+
+
+    #add{
+        margin-top:6%;
+    }
+    #editAnddelete{
+        width:80%;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    #GridView1{
+        font-size:2rem;
+    }
+    .table tr td{
+        font-size:1.5rem;
+    }
+    ul li{
+      width:103%;
+      margin-left:-3%;
+    }
+    .headertitle{
+  background-color:#b2d3c2;
+  width:87%;
+  margin-left:13%;
+  justify-content:center;
+  align-items:center;
+  font-size:x-large;
+  font-weight:bold;
+  margin-bottom:1.5%;
+  
+   
+}
+    .headertitle h3 {
+        text-align: center;
+        height: 65px;
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 900;
+        font-size: x-large;
+    }
+    @media screen and (min-width:0px) and (max-width:1100px) {
+    .section{
+        display: block;
+
+    }
+
+ .headertitle{
+  width: 100%;
+  height: 50px;
+  margin-left: 0%;
+  display: flex;
+  padding-top:0.5%;
+  background-color:#b2d3c2;
+  justify-content: center;
+  font-size:x-large;
+}
+}
+
+</style>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+            <div class="wrapper">
+        <!--Top menu -->
+        
+        <div class="sidebar">
+           <!--profile image & text-->   
+           <div class="profile">
+            <h3>Momen Company</h3>
+        </div>
+
+ <ul class="list">
+                <li>
+                <a href="https://localhost:44322/WebForm4.aspx" >
+                    <span class="icon">
+                        <i class="fa fa-book"></i>
+                                        
+                    </span>
+                    <span class="item">Add New Customer</span>
+                </a>
+            </li>
+
+
+            <li>
+                <a href="https://localhost:44322/WebForm2.aspx">
+                    <span class="icon"><i class="fas fa-user-friends"></i></span>
+                    <span class="item">Customers</span>
+                </a>
+            </li>
+            
+          
+            <li>
+                <a href="https://localhost:44322/WebForm3.aspx">
+                    <span class="icon"><i class="fa fa-chart-line"></i></span>
+                    <span class="item">statistics</span>
+                </a>
+            </li>
+             
+           
+        </ul>
+    </div>
+    <div class="section" >
+        <div class="top_navbar">
+            <div class="hamburger">
+                <a href="#">
+                    <i class="fas fa-bars"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+            <!--menu item-->
+        </div>
+        <div class="headertitle">
+                <h3>Momen Company</h3>
+        </div>
+
+        
+    
+   <main>
+
+   
+   
+
+  <div class="con">
+                    
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+         </div>
+     
+   
+            </main>
+    </form>
+    <script>
+        var hamburger = document.querySelector(".hamburger");
+        hamburger.addEventListener("click", function () {
+            document.querySelector("body").classList.toggle("active");
+        })
+    </script>
+          <script src="AdminCss/vendors/base/vendor.bundle.base.js"></script>
+<script src="AdminCss/js/off-canvas.js"></script>
+  <script src="AdminCss/js/hoverable-collapse.js"></script>
+  <script src="AdminCss/js/template.js"></script>
+  <script src="AdminCss/js/todolist.js"></script>
+
+
+
+             <script type="text/javascript">
+                 function successalert() {
+                     swal({
+                         title: 'Perfect Working',
+                         text: 'Your Category has been succesfully added',
+                         type: 'success'
+                     });
+                 }
+
+                 function successaler() {
+                     swal({
+                         title: 'Perfect Working',
+                         text: 'Your Category has been succesfully deleted',
+                         type: 'success'
+                     });
+                 }
+                 function successale() {
+                     swal({
+                         title: 'Perfect Working',
+                         text: 'Your Category has been succesfully updated',
+                         type: 'success'
+                     });
+                 }
+             </script>
+       
+</body>
+</html>
