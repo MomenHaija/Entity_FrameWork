@@ -42,6 +42,11 @@
         <br />
         <asp:Label ID="labTabel" runat="server"></asp:Label>
         <br />
-        <asp:GridView ID="GridView1" runat="server" CssClass="table table-striped"></asp:GridView>
+        <asp:GridView ID="GridView1" runat="server" CssClass="table table-striped">
+            <Columns>
+                <asp:HyperLinkField DataNavigateUrlFields="customer_id" DataNavigateUrlFormatString="Edit.aspx?id={0}" Text="Edit" />
+                <asp:HyperLinkField DataNavigateUrlFields="customer_id" DataNavigateUrlFormatString="DeleteUser.aspx?id={0}" Text="Delete" />
+            </Columns>
+    </asp:GridView>
 </asp:Content>
 

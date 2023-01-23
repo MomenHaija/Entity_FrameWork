@@ -31,7 +31,7 @@ namespace EntityTask2
                 foreach (var g in query)
                 {
 
-                    GridView1.Rows[i].Cells[5].Text = HttpUtility.HtmlDecode($"<img src='Images/{g.photo}' width=\"60px\" height=\"60px\" ");
+                    GridView1.Rows[i].Cells[7].Text = HttpUtility.HtmlDecode($"<img src='Images/{g.photo}' width=\"60px\" height=\"60px\" ");
                     i++;
                 }
             }
@@ -75,7 +75,7 @@ namespace EntityTask2
                 foreach (var g in query)
                 {
 
-                    GridView1.Rows[i].Cells[5].Text = HttpUtility.HtmlDecode($"<img src='Images/{g.photo}' width=\"60px\" height=\"60px\" ");
+                    GridView1.Rows[i].Cells[7].Text = HttpUtility.HtmlDecode($"<img src='Images/{g.photo}' width=\"60px\" height=\"60px\" ");
                     i++;
                 }
 
@@ -87,7 +87,7 @@ namespace EntityTask2
                 var query = from t1 in context.cities
                             join t2 in context.Customers
                             on t1.city_id equals t2.city_id
-                            select new { t2.customer_id, t2.customer_name, t2.customer_age, t2.email, t2.phone, t2.photo, t1.city_name };
+                            select new { t2.customer_id, t2.customer_name, t2.customer_age, t2.email, t2.phone, t2.photo, t1.city_name ,};
                 var result = query.ToList();
 
                 GridView1.DataSource = result;
@@ -100,7 +100,7 @@ namespace EntityTask2
                     foreach (var g in query)
                     {
 
-                        GridView1.Rows[i].Cells[5].Text = HttpUtility.HtmlDecode($"<img src='Images/{g.photo}' width=\"60px\" height=\"60px\" ");
+                        GridView1.Rows[i].Cells[7].Text = HttpUtility.HtmlDecode($"<img src='Images/{g.photo}' width=\"60px\" height=\"60px\" ");
                         i++;
                     }
                 }
@@ -127,7 +127,7 @@ namespace EntityTask2
                     foreach (var g in query)
                     {
 
-                        GridView1.Rows[i].Cells[5].Text = HttpUtility.HtmlDecode($"<img src='Images/{g.photo}' width=\"60px\" height=\"60px\" >");
+                        GridView1.Rows[i].Cells[7].Text = HttpUtility.HtmlDecode($"<img src='Images/{g.photo}' width=\"60px\" height=\"60px\" >");
                         i++;
                     }
                 }
